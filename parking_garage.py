@@ -24,8 +24,8 @@ You will need a few attributes as well:
 """
 
 class Parking():
-    tickets = ['Open'] * 10
-    parkingSpaces = ['Open'] * 10
+    tickets = ["open spaces"] * 10
+    parkingSpaces = ["open spaces"] * 10
     currentTicket = {"paid": False}
 
     def takeTicket(self):
@@ -47,22 +47,19 @@ class Parking():
             payment = input("Please input payment amount: ")
             if payment != '':
                 print("Thank you, have a nice day!")
-        Parking.tickets.append("Open")
-        Parking.parkingSpaces.append("Open")
-        print(f"There are now {self.parkingSpaces} spaces available!")
-
-
+        Parking.tickets.append("open spaces")
+        Parking.parkingSpaces.append("open spaces")
 
 garage = Parking()
 
 def run():
     while True:
-        question = input("Please enter: Buy Ticket, Pay for Parking, or Leave Garage: ")
-        if question.lower() == 'buy ticket':
+        question = input("Please enter: Buy, Pay, or Leave: ")
+        if question.lower() == 'buy':
             garage.takeTicket()
-        elif question.lower() == 'pay for parking':
+        elif question.lower() == 'pay':
             garage.payForParking()
-        elif question.lower() == 'leave garage':
+        elif question.lower() == 'leave':
             garage.leaveGarage()
             break
         else:
